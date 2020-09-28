@@ -2,9 +2,8 @@ package co.com.devco.stepdefinitions;
 
 import co.com.devco.exceptions.ResultadoDeBusquedaInesperado;
 import co.com.devco.questions.FindResultsPetBook;
-import co.com.devco.questions.PrimerResultadoGoogle;
-import co.com.devco.tasks.BuscarEnGoogle;
 import co.com.devco.tasks.FindAllPetBook;
+import co.com.devco.tasks.FindDogsPetBook;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
 
@@ -13,17 +12,17 @@ import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
-public class PetBookFindAllStepDefinitions {
+public class PetBookFindDogsStepDefinitions {
 
-    @Cuando("^(.*) le da clic al boton all$")
-    public void LeDaClicAlBotonAll(String actor) {
+    @Cuando("^(.*) le da clic al boton Perro")
+    public void LeDaClicAlBotonPerro(String actor) {
         theActorCalled(actor).attemptsTo(
-                FindAllPetBook.find()
+                FindDogsPetBook.find()
         );
     }
 
-    @Entonces("^debe encontrar la imagen (.*)$")
-    public void debeEncontrarLaImagen(String imagen) {
+    @Entonces("^debe ver la imagen Perro (.*)$")
+    public void debeVerLaImagenPerro(String imagen) {
 
         theActorInTheSpotlight().should(seeThat(
                 FindResultsPetBook.es(imagen)).orComplainWith(
