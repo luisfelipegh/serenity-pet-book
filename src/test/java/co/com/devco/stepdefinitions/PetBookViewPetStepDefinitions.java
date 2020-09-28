@@ -1,8 +1,10 @@
 package co.com.devco.stepdefinitions;
 
 import co.com.devco.exceptions.ResultadoDeBusquedaInesperado;
-import co.com.devco.questions.PrimerResultadoGoogle;
-import co.com.devco.tasks.BuscarEnGoogle;
+import co.com.devco.questions.FindResultsPetBook;
+import co.com.devco.questions.ValidatePetViewPetBook;
+import co.com.devco.tasks.FindAllPetBook;
+import co.com.devco.tasks.ViewPetPetBook;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
 
@@ -11,19 +13,20 @@ import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
-public class GoogleSearchStepDefinitions {
+public class PetBookViewPetStepDefinitions {
 
-    @Cuando("^(.*) busca (.*) en Google Search$")
-    public void BuscaEnGoogleSearch(String actor, String palabra) {
+    @Cuando("^(.*) le da clic a una mascota$")
+    public void LeDaClicAUnaMascota(String actor, String imagen) {
         theActorCalled(actor).attemptsTo(
-                BuscarEnGoogle.laPalabra(palabra)
+                ViewPetPetBook.find()
         );
     }
 
-    @Entonces("^debe ver como primer resultado (.*)$")
-    public void debeVerComoPrimerResultado(String resultado) {
+    @Entonces("^debe ver la mascota en una sola pagina a (.*)$")
+    public void debeVerLaMascotaEnUnaSolaPagina(String imagen) {
+
         theActorInTheSpotlight().should(seeThat(
-                PrimerResultadoGoogle.es(resultado)).orComplainWith(
+                ValidatePetViewPetBook.es(imagen)).orComplainWith(
                         ResultadoDeBusquedaInesperado.class, ENCONTRADO_OTRO_RESULTADO
                 )
         );

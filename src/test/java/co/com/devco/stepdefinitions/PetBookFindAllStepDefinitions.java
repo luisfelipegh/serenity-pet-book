@@ -2,8 +2,6 @@ package co.com.devco.stepdefinitions;
 
 import co.com.devco.exceptions.ResultadoDeBusquedaInesperado;
 import co.com.devco.questions.FindResultsPetBook;
-import co.com.devco.questions.PrimerResultadoGoogle;
-import co.com.devco.tasks.BuscarEnGoogle;
 import co.com.devco.tasks.FindAllPetBook;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
