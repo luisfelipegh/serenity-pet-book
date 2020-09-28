@@ -16,7 +16,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 public class PetBookViewPetStepDefinitions {
 
     @Cuando("^(.*) le da clic a una mascota$")
-    public void LeDaClicAUnaMascota(String actor, String imagen) {
+    public void LeDaClicAUnaMascota(String actor) {
         theActorCalled(actor).attemptsTo(
                 ViewPetPetBook.find()
         );

@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-		features = "src/test/resources/features/pet_book_find_all.feature",
+		features = "src/test/resources/features/pet_book_view_pet.feature",
 		glue = {"co.com.devco.stepdefinitions"},
 		snippets = SnippetType.CAMELCASE
 )

@@ -5,7 +5,7 @@ import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Attribute;
 import net.serenitybdd.screenplay.questions.CSSValue;
 
-import static co.com.devco.userinterfaces.PetBookViewPetPage.IMAGE;
+import static co.com.devco.userinterfaces.PetBookViewPetPage.IMAGE_RESULT;
 
 public class ValidatePetViewPetBook implements Question<Boolean> {
     private String imagen;
@@ -20,7 +20,7 @@ public class ValidatePetViewPetBook implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        String resultadoEncontrado = CSSValue.of(IMAGE).named("background-image") .viewedBy(actor).asString();
+        String resultadoEncontrado = CSSValue.of(IMAGE_RESULT).named("background-image") .viewedBy(actor).asString();
         return resultadoEncontrado.contains(imagen);
     }
 }
